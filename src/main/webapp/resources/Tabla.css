@@ -1,0 +1,320 @@
+/* Colors */
+$primary-highlight: #2d5aff;
+$primary-background: #ffffff;
+$corner-color: #000000;
+
+$thead-background: $primary-highlight;
+$thead-color: $primary-background;
+
+/* Bidirectional Table */
+div.frozen-table {
+
+    width: 100%;
+    min-height: 150px;
+    overflow: scroll;
+    margin: 0 auto;
+
+    /* Remove the below 3 properties on your Website (Test-Purpose) */
+    width: 800px;
+    height: 400px;
+    resize: both;
+
+    table {
+
+        min-width: 100%;
+        min-height: 100%;
+        border-collapse: collapse;
+
+        th {
+
+            height: 100%;
+            border: 0px none transparent;
+            padding: 0;
+
+            span {
+
+                display: block;
+                padding: 20px;
+                border-right: 1px solid $primary-highlight;
+
+            }
+
+        }
+
+        thead {
+
+            tr {
+
+                th {
+
+                    background: $thead-background;
+                    color: $thead-color;
+
+                    position: relative;
+                    z-index: 0;
+
+                }
+
+                &:first-child {
+
+                    th {
+
+                        span {
+
+                            border: 0px none transparent;
+
+                        }
+
+                        &:first-child {
+
+                            background: $corner-color;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        tbody {
+
+            th {
+
+                background: $primary-background;
+
+                &:only-child {
+
+                    z-index: -1;
+
+                    span {
+
+                        border: 0px none transparent;
+                        border-top: 1px solid $primary-highlight;
+                        border-bottom: 1px solid $primary-highlight;
+
+                    }
+
+                }
+
+            }
+
+            td {
+
+                background-color: $primary-background;
+
+                padding: 20px;
+
+            }
+
+        }
+
+    }
+
+    &[data-table="top"],
+    &[data-table="both"] {
+
+        thead {
+
+            th {
+
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+
+            }
+
+        }
+
+    }
+
+    &[data-table="left"],
+    &[data-table="both"] {
+
+        tbody {
+
+            th {
+
+                position: -webkit-sticky;
+                position: sticky;
+                left: 0;
+                z-index: 1;
+
+            }
+
+        }
+
+        thead {
+
+            th {
+
+                &:first-child {
+
+                    position: -webkit-sticky;
+                    position: sticky;
+                    left: 0;
+                    z-index: 2;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+/* Some CSS to prettyfy the screen */
+body {
+
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    overflow-y: auto;
+
+    background: azure;
+    background-repeat: no-repeat;
+
+    &:after {
+
+        content: " ";
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        z-index: -1;
+        opacity: .8;
+
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="28" height="49" viewBox="0 0 28 49"%3E%3Cg fill-rule="evenodd"%3E%3Cg id="hexagons" fill="%239C92AC" fill-opacity="0.4" fill-rule="nonzero"%3E%3Cpath d="M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+
+    }
+
+    #main-wrapper {
+
+        padding: 40px 0;
+
+    }
+
+    .contrast-bg {
+
+        padding: 15px;
+        background-color: rgba( 255, 255, 255, .6 );
+        margin-bottom: 60px;
+
+        p {
+
+            margin-top: 0;
+
+        }
+
+    }
+
+}
+
+.alineacion{
+    text-align: center;
+}
+
+
+
+
+
+
+@import url(//fonts.googleapis.com/css?family=Vibur);
+
+
+.logo {
+  text-align: center;
+  width: 50%;
+  height: 800px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  user-select: none;
+}
+
+.logo b{
+  font: 400 19vh "Vibur";
+  color:azure;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #191b24, 0 0 0.5em #191b24, 0 0 0.1em #191b24, 0 10px 3px #000;
+}
+.logo b span{
+  animation: blink linear infinite 2s;
+}
+.logo b span:nth-of-type(2){
+  animation: blink linear infinite 3s;
+}
+@keyframes blink {
+  78% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  79%{
+     color: #333;
+  }
+  80% {
+    
+    text-shadow: none;
+  }
+  81% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  82% {
+    color: #333;
+    text-shadow: none;
+  }
+  83% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+  92% {
+    color: #333;
+    text-shadow: none;
+  }
+  92.5% {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+
+/* follow me @nodws */
+#btn-twtr{
+  clear:both;
+  color:#fff;
+  border:2px solid;
+  border-radius:3px;
+  text-align:center;
+  text-decoration:none;
+  display:block;
+  font-family:sans-serif;
+  font-size:14px;
+  width:13em;
+  padding:5px 10px;
+  font-weight:600;
+  position:absolute;
+  bottom:20px;
+  left:0;
+  right:0;
+  margin:0 auto;
+  background:rgba(0,0,0,0.2);
+  box-shadow:0 0 0px 3px rgba(0,0,0,0.2);
+  opacity:0.4
+}#btn-twtr:hover{color:#fff;opacity:1}
