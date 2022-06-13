@@ -5,6 +5,7 @@ Fecha de Actualización: 17 de Marzo de 2022
 Descripción: Servlet formulario editar registros
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -22,11 +23,18 @@ Descripción: Servlet formulario editar registros
 
     <body>
         <!-- Menu index -->
-        <nav nav class="navbar navbar-dark bg-dark" style="background-color: #ddeeff;">
-            <div class="container-fluid">
-                <a href="pages/index.html" class="navbar-brand">Home</a>
+        <div class="contenido">
+            <div class="topnav" id="myTopnav">
+                <a href="pages/index.html" class="active">Home</a>
+                <a href="UsuarioServletController?action=listar">Listar</a>
+                <a href="UsuarioServletController?action=listar">Actualizar </a>
+                <a href="UsuarioServletController?action=listar">Eliminar </a>
+                <a href="#contact">Acerca de </a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
-        </nav>
+        </div>
         <!-- Fin Menu index -->
 
 
@@ -125,6 +133,18 @@ Descripción: Servlet formulario editar registros
             <!-- Copyright -->
         </footer>
         <!-- Fin de Pie de pagina -->
+        
+        <!-- Fin form lista --> 
+        <script>
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+        x.className += " responsive";
+        } else {
+        x.className = "topnav";
+        }
+        }
+        </script>
 
 
     </body>

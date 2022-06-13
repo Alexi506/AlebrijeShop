@@ -24,30 +24,29 @@ Descripción: Servlet formulario editar registros
     </head>
 
     <body>
-        <!-- Menu index -->
-        <nav nav class="navbar navbar-dark bg-dark" style="background-color: #ddeeff;">
-            <div class="container-fluid">
-                <a href="pages/index.html" class="navbar-brand">Home</a>
-            </div>
-        </nav>
-        <!-- Fin Menu index -->
-        
-        <div class="logo"><b>U<span>su</span><span>ar</span>ios</b></div><br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        
-        
-        
 
+        <!-- Menu index -->
+        <div class="contenido">
+            <div class="topnav" id="myTopnav">
+                <a href="pages/index.html" class="active">Home</a>
+                <a href="UsuarioServletController?action=crearForm">Crear</a>
+                <a href="UsuarioServletController?action=listar">Actualizar </a>
+                <a href="UsuarioServletController?action=listar">Eliminar </a>
+                <a href="#contact">Acerca de </a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div> <br>
+        <!-- Fin Menu index -->
+
+
+
+        <!-- Inicio form lista -->
         <div id="main-wrapper">
             <div class="frozen-table" data-table="both">
                 <table border="1" width="100%"  class="table">
                     <tr>
-
                         <td>Nombre</td>   
                         <td>Edad</td>  
                         <td>Sexo</td>  
@@ -56,18 +55,13 @@ Descripción: Servlet formulario editar registros
                     </tr> 
                     <c:forEach var="usuario" items="${ListaUsuario}">
                         <tr>
-
                             <td><c:out value="${usuario.nombre}"/></td>
                             <td><c:out value="${usuario.edad}"/></td>
                             <td><c:out value="${usuario.sexo}"/></td>
                             <td><c:out value="${usuario.nombreusuario}"/></td>
-                            
-                            
                             <td><a href=""></a></td>
                             <td><a href="UsuarioServletController?action=actualizaForm&codigo=<c:out value="${usuario.codigo}"/>" onclick="return confirm('Estás seguro que deseas actualizar el registro?')">Editar</a></td>
                             <td><a href="UsuarioServletController?action=delete&codigo=<c:out value="${usuario.codigo}"/>" onclick="return confirm('Estás seguro que deseas eliminar el registro?')"  >Eliminar</a></td>
-
-
                         </tr> 
                     </c:forEach>
                 </table> 
@@ -75,7 +69,16 @@ Descripción: Servlet formulario editar registros
         </div><br>
         <br>
         <br>
-
-
+        <!-- Fin form lista --> 
+        <script>
+        function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+        x.className += " responsive";
+        } else {
+        x.className = "topnav";
+        }
+        }
+        </script>
     </body>
 </html>
