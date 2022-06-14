@@ -1,17 +1,17 @@
 <%-- 
-    Document   : listarProducto
-    Created on : 17 may 2022, 15:24:09
+    Document   : ActualizarProducto
+    Created on : 14 jun 2022, 10:28:38
     Author     : labtw04
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Productos</title>
         <style type = "text/css">
-            <%@ include file = "../resources/css/menuprod.css"%>
+            <%@ include file = "../resources/actualizar.css"%>
         </style>
         <style>
             <%@include file="../webjars/bootstrap/5.1.3/css/bootstrap.min.css"%>
@@ -19,9 +19,10 @@
         <style>
             <%@ include file = "/webjars/fontawesome/4.7.0/css/font-awesome.css"%>
         </style>
+        <title>Actualizar</title>
     </head>
-    <body style="background: azure">
-        <!-- Menu Producto -->
+    <body>
+         <!-- Menu Producto -->
         <div class="contenido">
             <div class="topnav" id="myTopnav">
                 <a href="pages/index.html" class="active">Home</a>
@@ -35,51 +36,44 @@
             </div>
         </div> <br>
         <!-- Fin Menu Producto -->
-
-
-        <!-- Inicio body seccion de Product details -->
-        <div class="col-md-12">
-            <div id="alertTarget">
+        
+        <!-- INicio formulario -->
+        <div class="modernForm">
+            <div class="imageSection">
+                <div class="image">
+                    <div class="overlay"></div>
+                    <img class="img" src="https://cdn.pixabay.com/photo/2016/10/11/06/05/alebrijes-1730653_960_720.jpg" alt="pexels-yuri-manei-2272854">
+                </div>
+                <div class="textInside">
+                    <h1>Artesanias Oaxaqueñas</h1>
+                    <p class="tagLine">Todo lo que puede ser imaginado es real</p>
+                    <p class="tagLine">(pablo picasso)</p><br><br>
+                </div>
+            </div>
+            <div class="contactForm">
+                <h1>Actualizar registro</h1>
+                <form action="ProductoServletController?action=actualizar" method="POST">
+                    <input type="hidden" name="codigo" value="<c:out value="${producto.codigo}"></c:out>">
+                        <div class="name">
+                            <label for="fullName">Nombre: </label>
+                            <input type="text" name="nombre" id="fullName" placeholder="Nombre" value="<c:out value="${producto.nombre}"></c:out>" required pattern="[a-zA-Z]*"/>
+                            <div class="iconName"><i class="fa fa-address-book" aria-hidden="true"></i></div>
+                        </div>
+                         <div class="name">
+                            <label for="fullName">Descripción: </label>
+                            <input type="text" name="descripcion" id="fullName" placeholder="Descripcion" value="<c:out value="${producto.descripcion}"></c:out>" required/>
+                            <div class="iconName"><i class="fa-solid fa-user"></i></div>
+                        </div>
+                        <div class="name">
+                            <label for="fullName">Precio: </label>
+                            <input type="text" name="precio" id="fullName" placeholder="Precio" value="<c:out value="${producto.precio}"></c:out>" required"/>
+                            <div class="iconName"><i class="fa-solid fa-user"></i></div>
+                        </div>
+                    <input type="submit" value="Actualizar">
+                </form>
             </div>
         </div>
-        <section class="content">
-            <%--  Targetas producto --%>
-            <table border="1" width="100%"  class="table">
-                <c:forEach var="producto" items="${ListaProductos}">
-                    <div id="container">
-                        <!-- Start Product details -->
-                        <div class="product-details"> 
-                            <h1>Alebrijes</h1>
-                            <span class="hint-star star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                        <!-- Fin Start Product details -->
-                        <!--  Inicio product image  -->
-                        <div class="product-image">
-                            <img src="https://i.pinimg.com/474x/23/9e/4f/239e4f48bf732ee1ba022c45b5d06418.jpg" alt="Omar Dsoky">
-                            <div class="info">
-                                <h2>Producto</h2>
-                                <ul>
-                                    <li><c:out value="${producto.nombre}"/></li>
-                                    <li><c:out value="${producto.descripcion}"/></li>
-                                    <li><c:out value="${producto.precio}"/></li>
-                                    <a href="ProductoServletController?action=delete&codigo=<c:out value="${producto.codigo}"/>" onclick="return confirm('Estás seguro que deseas eliminar el registro?')"  >Eliminar</a>
-                                    <a href="ProductoServletController?action=actualizaForm&codigo=<c:out value="${producto.codigo}"/>" onclick="return confirm('Estás seguro que deseas actualizar el registro?')">Editar</a>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--  End product image  -->
-                    </div>
-                </c:forEach>
-            </table>
-            <%--  Fin Targetas producto --%>
-        </section>
-
+                            
         <!-- Pie de pagina -->
         <footer class="bg-dark text-white text-center text-lg-start">
             <!-- Grid container -->
@@ -139,5 +133,6 @@
                 }
             }
         </script>
+        
     </body>
 </html>

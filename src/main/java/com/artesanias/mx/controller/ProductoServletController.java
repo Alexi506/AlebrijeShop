@@ -35,6 +35,26 @@ public class ProductoServletController extends HttpServlet {
                 System.out.println("listando....");
                 Listar(request, response);
                 break;
+            case "crear":
+                System.out.println("Creando....");
+                crear(request, response);
+                break;
+            case "crearForm":
+                crearFormulario(request, response);
+                break;
+            case "crearBD":
+                crear(request, response);
+                break;
+            case "delete":
+                Eliminar(request, response);
+                break;
+            case "actualizaForm":
+                ActualizarForm(request, response);
+                break;
+            case "actualizar":
+                System.out.println("Actualizando....");
+                Actualizar(request, response);
+                break;
         }
     }
 
@@ -49,6 +69,65 @@ public class ProductoServletController extends HttpServlet {
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/listarProducto.jsp");
         this.service = new ProductoServiceImpl();
+        List<Producto> ListaProductos = this.service.obtenerRegistros();
+        request.setAttribute("ListaProductos", ListaProductos);
+        dispatcher.forward(request, response);
+    }
+     
+     private void crearFormulario(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        RequestDispatcher dispatcher
+                = request.getRequestDispatcher("/pages/CrearProducto.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    private void crear(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        Producto producto = new Producto();
+        producto.setNombre(request.getParameter("nombre"));
+        producto.setDescripcion(request.getParameter("descripcion"));
+        double e = Double.parseDouble(request.getParameter("precio"));
+        producto.setPrecio(e);
+        service = new ProductoServiceImpl();
+        service.crearRegistro(producto);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/listarProducto.jsp");
+        this.service = new ProductoServiceImpl();
+        List<Producto> ListaProductos = this.service.obtenerRegistros();
+        System.out.println("Lista: " + ListaProductos.size());
+        request.setAttribute("ListaProductos", ListaProductos);
+        dispatcher.forward(request, response);
+    }
+    
+    
+   private void Eliminar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/listarProducto.jsp");
+        this.service = new ProductoServiceImpl();
+        Producto producto = new Producto();
+        producto = this.service.obtenerRegistro(Integer.parseInt(request.getParameter("codigo")));
+        service.eliminarRegistro(producto);
+        List<Producto> ListaProductos = this.service.obtenerRegistros();
+        request.setAttribute("ListaProductos", ListaProductos);
+        dispatcher.forward(request, response);
+    }
+   
+    private void ActualizarForm(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        Producto producto = this.service.obtenerRegistro(Integer.parseInt(request.getParameter("codigo")));
+        request.setAttribute("producto", producto);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/ActualizarProducto.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    private void Actualizar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        System.out.println(request.getParameter("codigo"));
+        Producto producto = new Producto(Integer.parseInt(request.getParameter("codigo")));
+        producto.setNombre(request.getParameter("nombre"));
+        producto.setDescripcion(request.getParameter("descripcion"));
+        producto.setPrecio(Double.parseDouble(request.getParameter("precio")));
+        service.actualizarRegistro(producto);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/listarProducto.jsp");
         List<Producto> ListaProductos = this.service.obtenerRegistros();
         request.setAttribute("ListaProductos", ListaProductos);
         dispatcher.forward(request, response);

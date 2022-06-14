@@ -24,7 +24,15 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "clientes")
-
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Clientes.findAll", query = "SELECT c FROM Clientes c"),
+    @NamedQuery(name = "Clientes.findByCodigo", query = "SELECT c FROM Clientes c WHERE c.codigo = :codigo"),
+    @NamedQuery(name = "Clientes.findByNombre", query = "SELECT c FROM Clientes c WHERE c.nombre = :nombre"),
+    @NamedQuery(name = "Clientes.findByEdad", query = "SELECT c FROM Clientes c WHERE c.edad = :edad"),
+    @NamedQuery(name = "Clientes.findBySexo", query = "SELECT c FROM Clientes c WHERE c.sexo = :sexo"),
+    @NamedQuery(name = "Clientes.findByDireccion", query = "SELECT c FROM Clientes c WHERE c.direccion = :direccion"),
+    @NamedQuery(name = "Clientes.findByTelefono", query = "SELECT c FROM Clientes c WHERE c.telefono = :telefono")})
 public class Clientes implements Serializable {
 
     private static final long serialVersionUID = 1L;

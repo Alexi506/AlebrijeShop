@@ -37,7 +37,7 @@ Descripción: Servlet formulario editar registros
         </div>
         <!-- Fin Menu index -->
 
-
+        <!-- Crear formulario -->
         <div class="modernForm">
             <div class="imageSection">
                 <div class="image">
@@ -101,7 +101,6 @@ Descripción: Servlet formulario editar registros
                         <h5 class="text-uppercase">Redes sociales</h5>
 
                         <ul class="list-unstyled mb-0">
-
                             <a href="#"> <img src="../resources/img/instagram.png"><i class="text-white">AlexRam</i></a><br><br>
                             <a href="#"> <img src="../resources/img/facebook.png"><i class="text-white">Alexi Ramirez</i></a><br><br>
                             <a href="#"> <img src="../resources/img/whatsapp.png"><i class="text-white">2548759658</i></a><br>
