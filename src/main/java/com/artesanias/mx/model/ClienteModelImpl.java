@@ -27,7 +27,6 @@ public class ClienteModelImpl implements IClienteModel{
             s.getTransaction().commit();
             s.close();
             sf.close();
-            System.out.println("Registrado correctamente");
         } catch (HibernateException e) {
             System.out.println("Error al crear el registro: " + e.getMessage());
         }
@@ -43,7 +42,6 @@ public class ClienteModelImpl implements IClienteModel{
             s.getTransaction().commit();
             s.close();
             sf.close();
-            System.out.println("Actualizado correctamente");
         } catch (Exception e) {
             System.out.println("Error " +e.getMessage());
         }
@@ -90,24 +88,10 @@ public class ClienteModelImpl implements IClienteModel{
             s.getTransaction().commit();
             s.close();
             sf.close();
-             System.out.println("Eliminado correctamente");
         } catch (Exception e) {
             System.out.println("Error");
         }
     }
-    
-     public static void main(String[] args) {
-        IClienteModel model = new ClienteModelImpl();
-        Clientes c = new Clientes();
-        c.setCodigo(1);
-        c.setNombre("Cliente1");
-        c.setEdad(20);
-        c.setSexo("Masculino");
-        c.setDireccion("Morelos");
-        c.setTelefono("1425142563");
-        model.actualizarRegistro(c);
-    }
-    
 }
 
 

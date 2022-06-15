@@ -29,7 +29,7 @@
         <!-- Annotated entity classes -->
         <mapping class="com.artesanias.mx.entity.Usuario"/>
         <mapping class="com.artesanias.mx.entity.Producto"/>
-        <mapping class="com.artesanias.mx.entity.Cliente"/>
+        <mapping class="com.artesanias.mx.entity.Clientes"/>
         
     </session-factory>
 </hibernate-configuration>
