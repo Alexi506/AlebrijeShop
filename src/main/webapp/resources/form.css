@@ -540,4 +540,10 @@ input[type="submit"]:hover {
     }
 }
 
+.centrar{
+  margin: 1rem;
+  padding: 1rem;
+  /* IMPORTANTE */
+  text-align: center;
+}
 

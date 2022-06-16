@@ -1,494 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    background: linear-gradient(to bottom right, #92c5fe 0%, #cbc2fb 100%);
-    font-family: "Open Sans", sans-serif;
-    min-height: 90vh;
-    margin: 0;  font-family: Arial;
-}
-.img {
-    width: 100%;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    display: block;
-}
-a {
-    margin-left: 30px;
-    color: #3c63cc;
-    font-weight: 600;
-}
-a:hover {
-    margin-left: 30px;
-    color: #2fa1fd;
-}
-.modernForm {
-    max-width: 1200px;
-    display: flex;
-    margin: 100px auto;
-    background-color: #fff;
-    border-radius: 10px;
-}
-.imageSection {
-    flex-basis: 50%;
-    position: relative;
-    color: white;
-}
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(96, 30, 150, 0.507);
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    z-index: 0;
-}
-.textInside,
-.service {
-    position: absolute;
-}
-.textInside {
-    bottom: 200px;
-    right: 120px;
-}
-.tagLine {
-    font-size: 1rem;
-    font-weight: 600;
-}
-.price {
-    font-size: 2rem;
-    font-weight: 700;
-}
-.service {
-    bottom: 30px;
-    right: 50px;
-}
-.service p {
-    font-weight: 700;
-}
-.contactForm {
-    flex-basis: 45%;
-    margin: auto;
-    color: #555;
-    padding-left: 30px;
-}
-.contactForm h1 {
-    padding: 15px 0;
-}
-input[type="email"],
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: rgb(177, 177, 177) 1px solid;
-    margin-top: 10px;
-}
-.name {
-    position: relative;
-    margin-bottom: 20px;
-}
-.iconName {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-}
-
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-input[type="submit"] {
-    background-color: #3c63cc;
-    font-size: 1rem;
-    border: none;
-    color: white;
-    padding: 10px 50px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin: 30px 0;
-    cursor: pointer;
-    float: left;
-}
-input[type="submit"]:hover {
-    background-color: #2fa1fd;
-}
-
-@media only screen and (max-width: 768px) {
-    .modernForm {
-        flex-wrap: wrap;
-    }
-    .imageSection,
-    .contactForm {
-        flex-basis: 100%;
-    }
-    .overlay,
-    img {
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-    .contactForm {
-        padding-right: 30px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-#cssmenu,
-#cssmenu ul,
-#cssmenu ul li,
-#cssmenu ul li a,
-#cssmenu #menu-button {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    list-style: none;
-    line-height: 1;
-    display: block;
-    position: relative;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-#cssmenu:after,
-#cssmenu > ul:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-}
-#cssmenu #menu-button {
-    display: none;
-}
-#cssmenu {
-    font-family: Montserrat, sans-serif;
-    background: #333333;
-}
-#cssmenu > ul > li {
-    float: left;
-}
-#cssmenu.align-center > ul {
-    font-size: 0;
-    text-align: center;
-}
-#cssmenu.align-center > ul > li {
-    display: inline-block;
-    float: none;
-}
-#cssmenu.align-center ul ul {
-    text-align: left;
-}
-#cssmenu.align-right > ul > li {
-    float: right;
-}
-#cssmenu > ul > li > a {
-    padding: 17px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color: #dddddd;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-#cssmenu > ul > li:hover > a {
-    color: #ffffff;
-}
-#cssmenu > ul > li.has-sub > a {
-    padding-right: 30px;
-}
-#cssmenu > ul > li.has-sub > a:after {
-    position: absolute;
-    top: 22px;
-    right: 11px;
-    width: 8px;
-    height: 2px;
-    display: block;
-    background: #dddddd;
-    content: '';
-}
-#cssmenu > ul > li.has-sub > a:before {
-    position: absolute;
-    top: 19px;
-    right: 14px;
-    display: block;
-    width: 2px;
-    height: 8px;
-    background: #dddddd;
-    content: '';
-    -webkit-transition: all .25s ease;
-    -moz-transition: all .25s ease;
-    -ms-transition: all .25s ease;
-    -o-transition: all .25s ease;
-    transition: all .25s ease;
-}
-#cssmenu > ul > li.has-sub:hover > a:before {
-    top: 23px;
-    height: 0;
-}
-#cssmenu ul ul {
-    position: absolute;
-    left: -9999px;
-}
-#cssmenu.align-right ul ul {
-    text-align: right;
-}
-#cssmenu ul ul li {
-    height: 0;
-    -webkit-transition: all .25s ease;
-    -moz-transition: all .25s ease;
-    -ms-transition: all .25s ease;
-    -o-transition: all .25s ease;
-    transition: all .25s ease;
-}
-#cssmenu li:hover > ul {
-    left: auto;
-}
-#cssmenu.align-right li:hover > ul {
-    left: auto;
-    right: 0;
-}
-#cssmenu li:hover > ul > li {
-    height: 35px;
-}
-#cssmenu ul ul ul {
-    margin-left: 100%;
-    top: 0;
-}
-#cssmenu.align-right ul ul ul {
-    margin-left: 0;
-    margin-right: 100%;
-}
-#cssmenu ul ul li a {
-    border-bottom: 1px solid rgba(150, 150, 150, 0.15);
-    padding: 11px 15px;
-    width: 170px;
-    font-size: 12px;
-    text-decoration: none;
-    color: #dddddd;
-    font-weight: 400;
-    background: #333333;
-}
-#cssmenu ul ul li:last-child > a,
-#cssmenu ul ul li.last-item > a {
-    border-bottom: 0;
-}
-#cssmenu ul ul li:hover > a,
-#cssmenu ul ul li a:hover {
-    color: #ffffff;
-}
-#cssmenu ul ul li.has-sub > a:after {
-    position: absolute;
-    top: 16px;
-    right: 11px;
-    width: 8px;
-    height: 2px;
-    display: block;
-    background: #dddddd;
-    content: '';
-}
-#cssmenu.align-right ul ul li.has-sub > a:after {
-    right: auto;
-    left: 11px;
-}
-#cssmenu ul ul li.has-sub > a:before {
-    position: absolute;
-    top: 13px;
-    right: 14px;
-    display: block;
-    width: 2px;
-    height: 8px;
-    background: #dddddd;
-    content: '';
-    -webkit-transition: all .25s ease;
-    -moz-transition: all .25s ease;
-    -ms-transition: all .25s ease;
-    -o-transition: all .25s ease;
-    transition: all .25s ease;
-}
-#cssmenu.align-right ul ul li.has-sub > a:before {
-    right: auto;
-    left: 14px;
-}
-#cssmenu ul ul > li.has-sub:hover > a:before {
-    top: 17px;
-    height: 0;
-}
-@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
-    #cssmenu {
-        width: 100%;
-    }
-    #cssmenu ul {
-        width: 100%;
-        display: none;
-    }
-    #cssmenu.align-center > ul {
-        text-align: left;
-    }
-    #cssmenu ul li {
-        width: 100%;
-        border-top: 1px solid rgba(120, 120, 120, 0.2);
-    }
-    #cssmenu ul ul li,
-    #cssmenu li:hover > ul > li {
-        height: auto;
-    }
-    #cssmenu ul li a,
-    #cssmenu ul ul li a {
-        width: 100%;
-        border-bottom: 0;
-    }
-    #cssmenu > ul > li {
-        float: none;
-    }
-    #cssmenu ul ul li a {
-        padding-left: 25px;
-    }
-    #cssmenu ul ul ul li a {
-        padding-left: 35px;
-    }
-    #cssmenu ul ul li a {
-        color: #dddddd;
-        background: none;
-    }
-    #cssmenu ul ul li:hover > a,
-    #cssmenu ul ul li.active > a {
-        color: #ffffff;
-    }
-    #cssmenu ul ul,
-    #cssmenu ul ul ul,
-    #cssmenu.align-right ul ul {
-        position: relative;
-        left: 0;
-        width: 100%;
-        margin: 0;
-        text-align: left;
-    }
-    #cssmenu > ul > li.has-sub > a:after,
-    #cssmenu > ul > li.has-sub > a:before,
-    #cssmenu ul ul > li.has-sub > a:after,
-    #cssmenu ul ul > li.has-sub > a:before {
-        display: none;
-    }
-    #cssmenu #menu-button {
-        display: block;
-        padding: 17px;
-        color: #dddddd;
-        cursor: pointer;
-        font-size: 12px;
-        text-transform: uppercase;
-        font-weight: 700;
-    }
-    #cssmenu #menu-button:after {
-        position: absolute;
-        top: 22px;
-        right: 17px;
-        display: block;
-        height: 4px;
-        width: 20px;
-        border-top: 2px solid #dddddd;
-        border-bottom: 2px solid #dddddd;
-        content: '';
-    }
-    #cssmenu #menu-button:before {
-        position: absolute;
-        top: 16px;
-        right: 17px;
-        display: block;
-        height: 2px;
-        width: 20px;
-        background: #dddddd;
-        content: '';
-    }
-    #cssmenu #menu-button.menu-opened:after {
-        top: 23px;
-        border: 0;
-        height: 2px;
-        width: 15px;
-        background: #ffffff;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-    #cssmenu #menu-button.menu-opened:before {
-        top: 23px;
-        background: #ffffff;
-        width: 15px;
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-    }
-    #cssmenu .submenu-button {
-        position: absolute;
-        z-index: 99;
-        right: 0;
-        top: 0;
-        display: block;
-        border-left: 1px solid rgba(120, 120, 120, 0.2);
-        height: 46px;
-        width: 46px;
-        cursor: pointer;
-    }
-    #cssmenu .submenu-button.submenu-opened {
-        background: #262626;
-    }
-    #cssmenu ul ul .submenu-button {
-        height: 34px;
-        width: 34px;
-    }
-    #cssmenu .submenu-button:after {
-        position: absolute;
-        top: 22px;
-        right: 19px;
-        width: 8px;
-        height: 2px;
-        display: block;
-        background: #dddddd;
-        content: '';
-    }
-    #cssmenu ul ul .submenu-button:after {
-        top: 15px;
-        right: 13px;
-    }
-    #cssmenu .submenu-button.submenu-opened:after {
-        background: #ffffff;
-    }
-    #cssmenu .submenu-button:before {
-        position: absolute;
-        top: 19px;
-        right: 22px;
-        display: block;
-        width: 2px;
-        height: 8px;
-        background: #dddddd;
-        content: '';
-    }
-    #cssmenu ul ul .submenu-button:before {
-        top: 12px;
-        right: 16px;
-    }
-    #cssmenu .submenu-button.submenu-opened:before {
-        display: none;
-    }
-    
-    
 /*Estilos nav bar */
 
 .topnav {
@@ -540,4 +49,110 @@ input[type="submit"]:hover {
     display: block;
     text-align: left;
   }
+}
+
+/*------------ Estilo formulario actualizar -----------------*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(255, 195, 0);
+
+}
+body {
+  background: linear-gradient(115deg, rgba(0, 29, 61, 0.6), rgba(0, 53, 102, 0.9)),
+    center/cover url("https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_960_720.png") no-repeat;
+}
+h1 {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-top: 4rem;
+}
+
+#description {
+  font-size: 22px;
+  width: 100%;
+  display: block;
+  padding-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-style: italic;
+  font-family: Tahoma;
+  font-weight: lighter;
+}
+#survey-form {
+  display: block;
+  padding: 2rem 0.5rem;
+  margin-bottom: 5%;
+  width: 50%;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 8, 20, 0.4);
+  border-radius: 5px;
+  backdrop-filter: blur(10px);
+}
+label,
+p {
+  display: block;
+  width: 92%;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+
+}
+.user-info,
+select,
+#textarea {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 12px 2px;
+  border-radius: 5px;
+  border-style: none;
+  padding-left: 10px;
+  font-size: 16px;
+
+  color: slategray;
+}
+option{
+  color: #000000;
+}
+p {
+  text-align: left;
+  width: 92%;
+}
+.radio,
+.checkbox {
+  display: inline-block;
+  margin-right: 15px;
+  transform: scale(1.5);
+}
+.group,
+.check {
+  padding-bottom: 2px;
+}
+button {
+  display: block;
+  width: 90%;
+  margin-top: 35px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgb(255, 183, 3);
+  color:rgb(2, 48, 71);
+  border-style: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: Tahoma;
+}
+.radiobuttons, .checklist{
+  width: 95%;
 }

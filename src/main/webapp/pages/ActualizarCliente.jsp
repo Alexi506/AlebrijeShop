@@ -34,7 +34,8 @@
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
-        </div> <br>
+        </div> 
+        <br>
         <!-- Fin Menu Producto -->
 
         <!-- INicio formulario -->

@@ -26,27 +26,21 @@ Descripción: Servlet formulario editar registros
 
     <body>
         <!-- Menu index -->
-        <nav nav class="navbar navbar-dark bg-dark" style="background-color: #ddeeff;">
-            <div class="container-fluid">
-                <a href="pages/index.html" class="navbar-brand">Home</a>
+        <div class="contenido">
+            <div class="topnav" id="myTopnav">
+                <a href="pages/index.html" class="active">Home</a>
+                <a href="UsuarioServletController?action=crearForm">Crear</a>
+                <a href="UsuarioServletController?action=listar">Listar </a>
+                <a href="UsuarioServletController?action=listar">Eliminar </a>
+                <a href="#contact">Acerca de </a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
-        </nav>
+        </div>
         <!-- Fin Menu index -->
 
        <!-- Inicio formulario actualizar -->
-        <div class="modernForm">
-            <div class="imageSection">
-                <div class="image">
-                    <div class="overlay"></div>
-                    <img class="img" src="https://cdn.pixabay.com/photo/2016/10/11/06/05/alebrijes-1730653_960_720.jpg" alt="pexels-yuri-manei-2272854">
-                </div>
-                <div class="textInside">
-                    <h1>Artesanias Oaxaqueñas</h1>
-                    <p class="tagLine">Todo lo que puede ser imaginado es real</p>
-                    <p class="tagLine">(pablo picasso)</p><br><br>
-                </div>
-            </div>
-            <div class="contactForm">
                 <h1>Actualizar registro</h1>
                 <form action="UsuarioServletController?action=actualizar" method="POST">
                     <input type="hidden" name="codigo" value="<c:out value="${usuario.codigo}"></c:out>">
@@ -77,8 +71,7 @@ Descripción: Servlet formulario editar registros
                     </div>  
                     <input type="submit" value="Actualizar">
                 </form>
-            </div>
-        </div>
+           
                         
         <!-- Pie de pagina -->
         <footer class="bg-dark text-white text-center text-lg-start">
@@ -97,9 +90,9 @@ Descripción: Servlet formulario editar registros
 
                         <ul class="list-unstyled mb-0">
 
-                            <a href="#"> <img src="../resources/img/instagram.png"><i class="text-white">AlexRam</i></a><br><br>
-                            <a href="#"> <img src="../resources/img/facebook.png"><i class="text-white">Alexi Ramirez</i></a><br><br>
-                            <a href="#"> <img src="../resources/img/whatsapp.png"><i class="text-white">2548759658</i></a><br>
+                            <a href="#"> <img src="resources/img/instagram.png"><i class="text-white">AlexRam</i></a><br><br>
+                            <a href="#"> <img src="resources/img/facebook.png"><i class="text-white">Alexi Ramirez</i></a><br><br>
+                            <a href="#"> <img src="resources/img/whatsapp.png"><i class="text-white">2548759658</i></a><br>
 
                         </ul>
                     </div>
