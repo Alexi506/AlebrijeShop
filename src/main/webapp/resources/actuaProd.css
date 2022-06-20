@@ -1,3 +1,13 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16 jun 2022, 11:32:44
+    Author     : labtw04
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 * {
     margin: 0;
@@ -6,7 +16,7 @@
 }
 body {
   background: linear-gradient(115deg, rgba(0, 29, 61, 0.6), rgba(0, 53, 102, 0.9)),
-    center/cover url("https://cdn.pixabay.com/photo/2016/06/02/02/33/triangles-1430105_960_720.png") no-repeat;
+    center/cover url("https://cdn.pixabay.com/photo/2015/08/19/01/58/abstract-895395_960_720.jpg") no-repeat;
 }
 .img {
     width: 100%;
@@ -187,3 +197,6 @@ input[type="submit"]:hover {
     text-align: left;
   }
 }
+
+
+/*------------ Estilos card productos ----------------------*/

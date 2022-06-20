@@ -53,8 +53,7 @@ Descripción: Servlet formulario editar registros
             
             <div class="contactForm">
                 <h1 style="text-align: center">Registro Usuario</h1>
-                <form action="UsuarioServletController?action=crearBD" method="POST" id="survey-form">
-                    <div id="info">
+                <form action="UsuarioServletController?action=crearBD" method="POST">
                     <div class="name">
                         <label for="fullName">Nombre:</label>
                         <input type="text" name="nombre" id="fullName" placeholder="Nombre" required pattern="[a-zA-Z]*"/>
@@ -81,7 +80,6 @@ Descripción: Servlet formulario editar registros
                         <div class="iconName"><i class="fa fa-lock" aria-hidden="true"></i></div>
                     </div>
                     <input type="submit" value="Registrar">
-                    </div>
                 </form>
             </div>
         </div>

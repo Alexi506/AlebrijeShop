@@ -23,7 +23,7 @@ Descripción: Servlet formulario editar registros
         </script>
     </head>
 
-    <body>
+    <body style="background-color: azure">
 
         <!-- Menu index -->
         <div class="contenido">
@@ -42,34 +42,26 @@ Descripción: Servlet formulario editar registros
 
 
 
-        <!-- Inicio form lista -->
-        <div id="main-wrapper">
-            <div class="frozen-table" data-table="both">
-                <table border="1" width="100%"  class="table">
-                    <tr>
-                        <td>Nombre</td>   
-                        <td>Edad</td>  
-                        <td>Sexo</td>  
-                        <td>Nombreusuario</td>  
-                        <td colspan=3>Acciones</td>  
-                    </tr> 
-                    <c:forEach var="usuario" items="${ListaUsuario}">
-                        <tr>
-                            <td><c:out value="${usuario.nombre}"/></td>
-                            <td><c:out value="${usuario.edad}"/></td>
-                            <td><c:out value="${usuario.sexo}"/></td>
-                            <td><c:out value="${usuario.nombreusuario}"/></td>
-                            <td><a href=""></a></td>
-                            <td><a href="UsuarioServletController?action=actualizaForm&codigo=<c:out value="${usuario.codigo}"/>" onclick="return confirm('Estás seguro que deseas actualizar el registro?')">Editar</a></td>
-                            <td><a href="UsuarioServletController?action=delete&codigo=<c:out value="${usuario.codigo}"/>" onclick="return confirm('Estás seguro que deseas eliminar el registro?')"  >Eliminar</a></td>
-                        </tr> 
-                    </c:forEach>
-                </table> 
-            </div>
-        </div><br>
-        <br>
-        <br>
+        <!-- Inicio form lista -->   
+        <div class="cuader">
+            <c:forEach var="usuario" items="${ListaUsuario}">
+                <figure class="snip0056">
+                    <figcaption>
+                        <h2> <span>Usuario: </span> <c:out value="${usuario.nombre}"/> </h2>
+                        <p>Edad: <c:out value="${usuario.edad}"/> </p>
+                        <p>Sexo: <c:out value="${usuario.sexo}"/> </p>
+                        <p>Nombre Usuario: <c:out value="${usuario.nombreusuario}"/> </p>
+                    </figcaption>
+                        <%--  <img src="<c:url value="${usuario.urlImagen}"/>"/> --%>
+                        <img src="resources/img/alebrije7.jpg"/>
+                    <div class="position"><a href="UsuarioServletController?action=actualizaForm&codigo=<c:out value="${usuario.codigo}"/>" onclick="return confirm('Estás seguro que deseas actualizar el registro?')">Editar</a> <a href="UsuarioServletController?action=delete&codigo=<c:out value="${usuario.codigo}"/>" onclick="return confirm('Estás seguro que deseas eliminar el registro?')"  >Eliminar</a></div>
+                </figure>
+            </c:forEach>
+        </div>
         <!-- Fin form lista --> 
+
+
+
         <br>
         <br>
         <br>

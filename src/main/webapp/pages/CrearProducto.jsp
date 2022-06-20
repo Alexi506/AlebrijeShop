@@ -9,14 +9,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style type = "text/css">
             <%@ include file = "../resources/form.css"%>
         </style>
         <style>
             <%@include file="../webjars/bootstrap/5.1.3/css/bootstrap.min.css"%>
-        </style>
-        <style>
-            <%@ include file = "/webjars/fontawesome/4.7.0/css/font-awesome.css"%>
         </style>
         <title>Actualizar</title>
     </head>
@@ -35,12 +33,12 @@
             </div>
         </div> <br>
         <!-- Fin Menu Producto -->
-        
+
         <div class="modernForm">
             <div class="imageSection">
                 <div class="image">
                     <div class="overlay"></div>
-                    <img class="img" src="https://cdn.pixabay.com/photo/2016/10/11/06/05/alebrijes-1730653_960_720.jpg" alt="pexels-yuri-manei-2272854">
+                    <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Artesan%C3%ADas_de_barro_en_Tavehua%2C_Oaxaca.jpg" alt="pexels-yuri-manei-2272854">
                 </div>
                 <div class="textInside">
                     <h1>Artesanias Oaxaqueñas</h1>
@@ -54,23 +52,27 @@
                     <div class="name">
                         <label for="fullName">Nombre:</label>
                         <input type="text" name="nombre" id="fullName" placeholder="Nombre" required pattern="[a-zA-Z]*"/>
-                        <div class="iconName"><i class="fa fa-user" aria-hidden="true"></i></div>
+                        <div class="iconName"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
                     </div>
                     <div class="name">
                         <label for="fullName">Descripcion:</label>
                         <input type="text" name="descripcion" id="fullName" placeholder="Descripción" required="required"/>
-                        <div class="iconName"><i class="fa-solid fa-user"></i></div>
+                        <div class="iconName"><i class="fa fa-comment" aria-hidden="true"></i></div>
                     </div>
                     <div class="name">
                         <label for="fullName">Precio: </label>
                         <input type="text" name="precio" id="fullName" placeholder="Precio" required="required"/>
-                        <div class="iconName"><i class="fa-solid fa-user"></i></div>
+                        <div class="iconName"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="name">
+                        <label for="fullName">Imagen: </label>
+                        <input type="file" name="urlImagen" id="attachment" required="required">
                     </div>
                     <input type="submit" value="Registrar">
                 </form>
             </div>
         </div>
-        
+
         <!-- Pie de pagina -->
         <footer class="bg-dark text-white text-center text-lg-start">
             <!-- Grid container -->
@@ -119,8 +121,8 @@
             <!-- Copyright -->
         </footer>
         <!-- Fin de Pie de pagina -->
-        
-         <script>
+
+        <script>
             function myFunction() {
                 var x = document.getElementById("myTopnav");
                 if (x.className === "topnav") {

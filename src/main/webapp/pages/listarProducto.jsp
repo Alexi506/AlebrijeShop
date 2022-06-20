@@ -10,14 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Productos</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <style type = "text/css">
             <%@ include file = "../resources/css/menuprod.css"%>
         </style>
         <style>
             <%@include file="../webjars/bootstrap/5.1.3/css/bootstrap.min.css"%>
-        </style>
-        <style>
-            <%@ include file = "/webjars/fontawesome/4.7.0/css/font-awesome.css"%>
         </style>
     </head>
     <body style="background: azure">
@@ -26,6 +24,7 @@
             <div class="topnav" id="myTopnav">
                 <a href="pages/index.html" class="active">Home</a>
                 <a href="ProductoServletController?action=crearForm">Crear</a>
+                <a href="ProductoServletController?action=listar">Actualizar</a>
                 <a href="ProductoServletController?action=listar">Listar </a>
                 <a href="ProductoServletController?action=listar">Eliminar </a>
                 <a href="#contact">Acerca de </a>
@@ -38,47 +37,41 @@
 
 
         <!-- Inicio body seccion de Product details -->
-        <div class="col-md-12">
-            <div id="alertTarget">
-            </div>
-        </div>
-        <section class="content">
-            <%--  Targetas producto --%>
-            <table border="1" width="100%"  class="table">
-                <c:forEach var="producto" items="${ListaProductos}">
-                    <div id="container">
-                        <!-- Start Product details -->
-                        <div class="product-details"> 
-                            <h1>Alebrijes</h1>
-                            <span class="hint-star star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                                <i class="fa fa-star-o" aria-hidden="true"></i>
-                            </span>
-                        </div>
-                        <!-- Fin Start Product details -->
-                        <!--  Inicio product image  -->
-                        <div class="product-image">
-                            <img src="https://i.pinimg.com/474x/23/9e/4f/239e4f48bf732ee1ba022c45b5d06418.jpg" alt="Omar Dsoky">
-                            <div class="info">
-                                <h2>Producto</h2>
-                                <ul>
-                                    <li><c:out value="${producto.nombre}"/></li>
-                                    <li><c:out value="${producto.descripcion}"/></li>
-                                    <li><c:out value="${producto.precio}"/></li>
-                                    <a href="ProductoServletController?action=delete&codigo=<c:out value="${producto.codigo}"/>" onclick="return confirm('Estás seguro que deseas eliminar el registro?')"  >Eliminar</a>
-                                    <a href="ProductoServletController?action=actualizaForm&codigo=<c:out value="${producto.codigo}"/>" onclick="return confirm('Estás seguro que deseas actualizar el registro?')">Editar</a>
-                                </ul>
+        <div class="shell">
+            <div class="container">
+                <div class="row">
+                    <c:forEach var="producto" items="${ListaProductos}">
+                        <div class="col-md-3">
+                            <div class="wsk-cp-product">
+                                <div class="wsk-cp-img">
+                                   <img src="<c:url value="${producto.urlImagen}"/>"/>
+                                </div>
+                                <div class="wsk-cp-text">
+                                    <div class="category">
+                                        <span><c:out value="${producto.nombre}"/></span>
+                                    </div>
+                                    <div class="title-product">
+                                        <h3><c:out value="${producto.descripcion}"/></h3>
+                                    </div>
+                                    <div class="description-prod">
+                                        <p>
+                                        <td><a href="ProductoServletController?action=actualizaForm&codigo=<c:out value="${producto.codigo}"/>" onclick="return confirm('Estás seguro que deseas actualizar el registro?')">Actualizar</a></td>
+                                        <td><a href="ProductoServletController?action=delete&codigo=<c:out value="${producto.codigo}"/>" onclick="return confirm('Estás seguro que deseas eliminar el registro?')"  >Eliminar</a></td>
+                                        </p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="wcf-left"><span class="price">Precio: $ <c:out value="${producto.precio}"/></span></div>
+                                        <div class="wcf-right"><a href="#" class="buy-btn"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!--  End product image  -->
-                    </div>
-                </c:forEach>
-            </table>
-            <%--  Fin Targetas producto --%>
-        </section>
+                    </c:forEach>          
+                </div>
+            </div>
+        </div>
+        <!-- Fin body seccion de Product details -->
+
 
         <!-- Pie de pagina -->
         <footer class="bg-dark text-white text-center text-lg-start">
@@ -128,8 +121,8 @@
             <!-- Copyright -->
         </footer>
         <!-- Fin de Pie de pagina -->
-        
-         <script>
+
+        <script>
             function myFunction() {
                 var x = document.getElementById("myTopnav");
                 if (x.className === "topnav") {

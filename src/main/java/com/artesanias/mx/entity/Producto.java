@@ -42,6 +42,8 @@ public class Producto implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "precio")
     private Double precio;
+     @Column(name = "urlimagen", length = 30, nullable = true)
+    private String urlImagen; 
 
     public Producto() {
     }
@@ -80,6 +82,14 @@ public class Producto implements Serializable {
 
     public void setPrecio(Double precio) {
         this.precio = precio;
+    }
+    
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
     }
 
     @Override

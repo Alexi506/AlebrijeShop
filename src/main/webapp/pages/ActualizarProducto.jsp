@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style type = "text/css">
-            <%@ include file = "../resources/actualizar.css"%>
+            <%@ include file = "../resources/actuaProd.css"%>
         </style>
         <style>
             <%@include file="../webjars/bootstrap/5.1.3/css/bootstrap.min.css"%>
@@ -22,7 +22,7 @@
         <title>Actualizar</title>
     </head>
     <body>
-         <!-- Menu Producto -->
+        <!-- Menu Producto -->
         <div class="contenido">
             <div class="topnav" id="myTopnav">
                 <a href="pages/index.html" class="active">Home</a>
@@ -36,13 +36,13 @@
             </div>
         </div> <br>
         <!-- Fin Menu Producto -->
-        
+
         <!-- INicio formulario -->
         <div class="modernForm">
             <div class="imageSection">
                 <div class="image">
                     <div class="overlay"></div>
-                    <img class="img" src="https://cdn.pixabay.com/photo/2016/10/11/06/05/alebrijes-1730653_960_720.jpg" alt="pexels-yuri-manei-2272854">
+                    <img class="img" src="https://neomexicanismos.com/wp-content/uploads/2019/03/mu%C3%B1eca-mexicana-2.jpg" alt="pexels-yuri-manei-2272854">
                 </div>
                 <div class="textInside">
                     <h1>Artesanias Oaxaqueñas</h1>
@@ -56,10 +56,10 @@
                     <input type="hidden" name="codigo" value="<c:out value="${producto.codigo}"></c:out>">
                         <div class="name">
                             <label for="fullName">Nombre: </label>
-                            <input type="text" name="nombre" id="fullName" placeholder="Nombre" value="<c:out value="${producto.nombre}"></c:out>" required pattern="[a-zA-Z]*"/>
+                            <input type="text" name="nombre" id="fullName" placeholder="Nombre" value="<c:out value="${producto.nombre}"></c:out>" required="required"/>
                             <div class="iconName"><i class="fa fa-address-book" aria-hidden="true"></i></div>
                         </div>
-                         <div class="name">
+                        <div class="name">
                             <label for="fullName">Descripción: </label>
                             <input type="text" name="descripcion" id="fullName" placeholder="Descripcion" value="<c:out value="${producto.descripcion}"></c:out>" required/>
                             <div class="iconName"><i class="fa-solid fa-user"></i></div>
@@ -67,13 +67,17 @@
                         <div class="name">
                             <label for="fullName">Precio: </label>
                             <input type="text" name="precio" id="fullName" placeholder="Precio" value="<c:out value="${producto.precio}"></c:out>" required"/>
-                            <div class="iconName"><i class="fa-solid fa-user"></i></div>
-                        </div>
+                        <div class="iconName"><i class="fa-solid fa-user"></i></div>
+                    </div>
+                    <div class="name">
+                        <label for="attachment">Imagen:</label> 
+                        <input type="file" name="urlImagen" id="attachment" required="required">
+                    </div>
                     <input type="submit" value="Actualizar">
                 </form>
             </div>
         </div>
-                            
+
         <!-- Pie de pagina -->
         <footer class="bg-dark text-white text-center text-lg-start">
             <!-- Grid container -->
@@ -122,8 +126,8 @@
             <!-- Copyright -->
         </footer>
         <!-- Fin de Pie de pagina -->
-        
-         <script>
+
+        <script>
             function myFunction() {
                 var x = document.getElementById("myTopnav");
                 if (x.className === "topnav") {
@@ -133,6 +137,6 @@
                 }
             }
         </script>
-        
+
     </body>
 </html>

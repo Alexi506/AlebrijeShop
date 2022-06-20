@@ -88,6 +88,7 @@ public class ProductoServletController extends HttpServlet {
         producto.setDescripcion(request.getParameter("descripcion"));
         double e = Double.parseDouble(request.getParameter("precio"));
         producto.setPrecio(e);
+        producto.setUrlImagen("resources/img/"+request.getParameter("urlImagen"));
         service = new ProductoServiceImpl();
         service.crearRegistro(producto);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/listarProducto.jsp");
@@ -126,6 +127,7 @@ public class ProductoServletController extends HttpServlet {
         producto.setNombre(request.getParameter("nombre"));
         producto.setDescripcion(request.getParameter("descripcion"));
         producto.setPrecio(Double.parseDouble(request.getParameter("precio")));
+        producto.setUrlImagen("resources/img/"+request.getParameter("urlImagen"));
         service.actualizarRegistro(producto);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/listarProducto.jsp");
         List<Producto> ListaProductos = this.service.obtenerRegistros();

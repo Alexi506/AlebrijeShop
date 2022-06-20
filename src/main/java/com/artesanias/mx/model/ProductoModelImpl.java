@@ -49,7 +49,7 @@ public class ProductoModelImpl implements IProductoModel{
             sf.close();
             System.out.println("Actualizado correctamente");
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("Error" + e.getMessage());
         }
     }
 
@@ -103,13 +103,14 @@ public class ProductoModelImpl implements IProductoModel{
     public static void main(String[] args) {
         IProductoModel model = new ProductoModelImpl();
         Producto p = new Producto();
-        p.setCodigo(4);
-        p.setNombre("Jarrón de barro negro");
-        p.setDescripcion("Producto de barro");
-        p.setPrecio(45.5);
-        //model.crearRegistro(p);
+       // p.setCodigo(9);
+        p.setNombre("Tapete");
+        p.setDescripcion("Producto de lana");
+        p.setPrecio(80.5);
+        p.setUrlImagen("resources/img/tapete.jpg");
+        model.crearRegistro(p);
         //model.actualizarRegistro(p);
-        model.eliminarRegistro(p);
+        //model.eliminarRegistro(p);
     }
 
 }

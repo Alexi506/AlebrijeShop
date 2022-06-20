@@ -46,6 +46,9 @@ public class Usuario implements Serializable {
     //@Size(max = 20)  \u00f1
     @Column(name = "contraseña", length = 30, nullable = true)
     private String contraseña;
+    
+    @Column(name = "urlimagen", length = 30, nullable = true)
+    private String urlImagen;
 
     public Usuario() {
     }
@@ -101,6 +104,16 @@ public class Usuario implements Serializable {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
+
+    public String getUrlImagen() {
+        return urlImagen;
+    }
+
+    public void setUrlImagen(String urlImagen) {
+        this.urlImagen = urlImagen;
+    }
+    
+    
 
     @Override
     public int hashCode() {
