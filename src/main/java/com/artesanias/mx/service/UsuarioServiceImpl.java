@@ -1,8 +1,8 @@
 /*
-Autor: Alexi Daniel Ramirez Ruiz
-Fecha de creación:17 de Marzo 2022
-Fecha de Actualización: 17 de Marzo de 2022
-Descripción: Servlet formulario editar registros
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Implementacion de metodos Uusarios service
  */
 package com.artesanias.mx.service;
 
@@ -11,9 +11,8 @@ import com.artesanias.mx.entity.Usuario;
 
 import java.util.List;
 
+public class UsuarioServiceImpl implements IUsuarioService {
 
-public class UsuarioServiceImpl implements IUsuarioService{
-    
     IUsuarioModel modelo = new UsuarioModelImpl();
 
     @Override
@@ -40,5 +39,5 @@ public class UsuarioServiceImpl implements IUsuarioService{
     public void eliminarRegistro(Usuario usuario) {
         modelo.eliminarRegistro(usuario);
     }
-    
+
 }

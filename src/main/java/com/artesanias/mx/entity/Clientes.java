@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Creacion de la base de datos y las tablas
  */
 package com.artesanias.mx.entity;
 
@@ -18,10 +19,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author labtw04
- */
+
 @Entity
 @Table(name = "clientes")
 @XmlRootElement
@@ -33,8 +31,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Clientes.findBySexo", query = "SELECT c FROM Clientes c WHERE c.sexo = :sexo"),
     @NamedQuery(name = "Clientes.findByDireccion", query = "SELECT c FROM Clientes c WHERE c.direccion = :direccion"),
     @NamedQuery(name = "Clientes.findByTelefono", query = "SELECT c FROM Clientes c WHERE c.telefono = :telefono")})
+/* Driver para la base de datos */
 public class Clientes implements Serializable {
-
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,14 +54,14 @@ public class Clientes implements Serializable {
     @Size(max = 30)
     @Column(name = "telefono")
     private String telefono;
-
+    //Constructor vacio
     public Clientes() {
     }
-
+    //Constructor con parametro
     public Clientes(Integer codigo) {
         this.codigo = codigo;
     }
-
+    /*--------- Inicio método get y set --------*/
     public Integer getCodigo() {
         return codigo;
     }
@@ -110,7 +109,7 @@ public class Clientes implements Serializable {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
+    /*--------- Fin método get y set --------*/
     @Override
     public int hashCode() {
         int hash = 0;

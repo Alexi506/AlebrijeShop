@@ -1,8 +1,8 @@
 /*
-Autor: Alexi Daniel Ramirez Ruiz 
-Fecha de creación: 17 de Marzo 2022
-Fecha de Actualización: 17 de Marzo de 2022
-Descripción: Servlet formulario editar registros
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Métodos get y set para la tabla Usuario
  */
 package com.artesanias.mx.entity;
 
@@ -20,8 +20,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "usuario")
-//@NamedQueries({
-//    @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")})
+
 
 /* Driver para la base de datos */
 public class Usuario implements Serializable {
@@ -32,31 +31,26 @@ public class Usuario implements Serializable {
 
     @Column(name = "codigo", length = 20, nullable = true)
     private Integer codigo;
-    // @Size(max = 20)
     @Column(name = "nombre", length = 30, nullable = true)
     private String nombre;
     @Column(name = "edad", length = 20, nullable = true)
     private Integer edad;
-    //@Size(max = 15)
     @Column(name = "sexo", length = 20, nullable = true)
     private String sexo;
-    //@Size(max = 20)
     @Column(name = "nombreusuario", length = 30, nullable = true)
     private String nombreusuario;
-    //@Size(max = 20)  \u00f1
     @Column(name = "contraseña", length = 30, nullable = true)
     private String contraseña;
-    
     @Column(name = "urlimagen", length = 30, nullable = true)
     private String urlImagen;
-
+    //Constructor vacio
     public Usuario() {
     }
-
+    //Constructor con parametro 
     public Usuario(Integer codigo) {
         this.codigo = codigo;
     }
-
+    /*--------- Inicio método get y set ---------*/
     public Integer getCodigo() {
         return codigo;
     }
@@ -112,7 +106,7 @@ public class Usuario implements Serializable {
     public void setUrlImagen(String urlImagen) {
         this.urlImagen = urlImagen;
     }
-    
+    /*--------- Fin método get y set ---------*/
     
 
     @Override

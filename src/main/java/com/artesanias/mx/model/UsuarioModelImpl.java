@@ -1,8 +1,8 @@
 /*
-Autor: Alexi Daniel Ramirez Ruiz
-Fecha de creación:17 de Marzo 2022
-Fecha de Actualización: 17 de Marzo de 2022
-Descripción: Servlet formulario editar registros
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Implementacion de metodos Usuario
  */
 package com.artesanias.mx.model;
 
@@ -16,7 +16,7 @@ import org.hibernate.cfg.Configuration;
 public class UsuarioModelImpl implements IUsuarioModel{
     private SessionFactory sf;
     private Session s;
-
+    //implemtación método crear
     @Override
     public void crearRegistro(Usuario usuario) {
         try {
@@ -31,7 +31,7 @@ public class UsuarioModelImpl implements IUsuarioModel{
             System.out.println("Error al crear el registro: " + e.getMessage());
         }
     }
-
+    //método implementación actualizacion usuarios
     @Override
     public void actualizarRegistro(Usuario usuario) {
         try {
@@ -46,7 +46,7 @@ public class UsuarioModelImpl implements IUsuarioModel{
             System.out.println("Error");
         }
     }
-
+    //método para listar a los usuarios
     @Override
     public List<Usuario> obtenerRegistros() {
         try {
@@ -62,7 +62,7 @@ public class UsuarioModelImpl implements IUsuarioModel{
         return null;
 
     }
-
+    //método para obtener un registro en especifico
     @Override
     public Usuario obtenerRegistro(int codigo) {
         try{
@@ -78,7 +78,7 @@ public class UsuarioModelImpl implements IUsuarioModel{
         }
         return null;
     }
-
+    //método para eliminar un registro
     @Override
     public void eliminarRegistro(Usuario usuario) {
         try {
@@ -93,21 +93,6 @@ public class UsuarioModelImpl implements IUsuarioModel{
             System.out.println("Error");
         }
        
-    }
-    
-    public static void main(String[] args) {
-        System.out.println("INGRESADO...");
-        IUsuarioModel model = new UsuarioModelImpl();
-        Usuario u = new Usuario();
-        //u.setCodigo(5);
-        u.setNombre("Hermilp");
-        u.setEdad(20);
-        u.setSexo("H");
-        u.setNombreusuario("dse");
-        u.setContraseña("luldendse");
-        model.crearRegistro(u);
-        //model.actualizarRegistro(u);
-        System.out.println("Lista:" + model.obtenerRegistros().size());
     }
 }
 

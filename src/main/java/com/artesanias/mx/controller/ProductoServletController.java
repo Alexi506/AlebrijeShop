@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Servlet Producto
  */
 package com.artesanias.mx.controller;
 
@@ -17,18 +18,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author labtw04
- */
 public class ProductoServletController extends HttpServlet {
-    
+
     IProductoService service;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       String action = request.getParameter("action");
+        String action = request.getParameter("action");
         System.out.println("Mostrar accion " + action);
         switch (action) {
             case "listar":
@@ -58,14 +55,15 @@ public class ProductoServletController extends HttpServlet {
         }
     }
 
-    
+    //Método activar el metodo get
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         doGet(request, response);
+        doGet(request, response);
     }
-    
-     private void Listar(HttpServletRequest request, HttpServletResponse response)
+
+    //Método para acceder al formulario de lista de productos
+    private void Listar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/listarProducto.jsp");
         this.service = new ProductoServiceImpl();
@@ -73,14 +71,16 @@ public class ProductoServletController extends HttpServlet {
         request.setAttribute("ListaProductos", ListaProductos);
         dispatcher.forward(request, response);
     }
-     
-     private void crearFormulario(HttpServletRequest request, HttpServletResponse response)
+
+    //Método llamada del formulario CrearProducto
+    private void crearFormulario(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher
                 = request.getRequestDispatcher("/pages/CrearProducto.jsp");
         dispatcher.forward(request, response);
     }
 
+    //Método para crear registro de productos
     private void crear(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Producto producto = new Producto();
@@ -88,7 +88,7 @@ public class ProductoServletController extends HttpServlet {
         producto.setDescripcion(request.getParameter("descripcion"));
         double e = Double.parseDouble(request.getParameter("precio"));
         producto.setPrecio(e);
-        producto.setUrlImagen("resources/img/"+request.getParameter("urlImagen"));
+        producto.setUrlImagen("resources/img/" + request.getParameter("urlImagen"));
         service = new ProductoServiceImpl();
         service.crearRegistro(producto);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/listarProducto.jsp");
@@ -98,9 +98,9 @@ public class ProductoServletController extends HttpServlet {
         request.setAttribute("ListaProductos", ListaProductos);
         dispatcher.forward(request, response);
     }
-    
-    
-   private void Eliminar(HttpServletRequest request, HttpServletResponse response)
+
+    //Métodfo para eliminar un producto
+    private void Eliminar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/listarProducto.jsp");
         this.service = new ProductoServiceImpl();
@@ -111,7 +111,7 @@ public class ProductoServletController extends HttpServlet {
         request.setAttribute("ListaProductos", ListaProductos);
         dispatcher.forward(request, response);
     }
-   
+    //Método llamada al formulario de actualizacion producto
     private void ActualizarForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Producto producto = this.service.obtenerRegistro(Integer.parseInt(request.getParameter("codigo")));
@@ -119,7 +119,7 @@ public class ProductoServletController extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/ActualizarProducto.jsp");
         dispatcher.forward(request, response);
     }
-
+    //Método actualización de productos
     private void Actualizar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println(request.getParameter("codigo"));
@@ -127,7 +127,7 @@ public class ProductoServletController extends HttpServlet {
         producto.setNombre(request.getParameter("nombre"));
         producto.setDescripcion(request.getParameter("descripcion"));
         producto.setPrecio(Double.parseDouble(request.getParameter("precio")));
-        producto.setUrlImagen("resources/img/"+request.getParameter("urlImagen"));
+        producto.setUrlImagen("resources/img/" + request.getParameter("urlImagen"));
         service.actualizarRegistro(producto);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/listarProducto.jsp");
         List<Producto> ListaProductos = this.service.obtenerRegistros();
@@ -135,5 +135,4 @@ public class ProductoServletController extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-   
 }

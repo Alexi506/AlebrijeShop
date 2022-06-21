@@ -1,18 +1,15 @@
 /*
-Autor: Alexi Daniel Ramirez Ruiz
-Fecha de creación:17 de Marzo 2022
-Fecha de Actualización: 17 de Marzo de 2022
-Descripción: Servlet formulario editar registros
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Interface usuario
  */
 package com.artesanias.mx.model;
 
 import com.artesanias.mx.entity.Usuario;
 import java.util.List;
 
-/**
- *
- * @author labtw04
- */
+//métodos abstractoss
 public interface IUsuarioModel {
     public void crearRegistro(Usuario usuario);
 

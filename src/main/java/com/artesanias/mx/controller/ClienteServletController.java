@@ -121,7 +121,7 @@ public class ClienteServletController extends HttpServlet {
         dispatcher.forward(request, response);
     }
     
-    //Método
+    //Método para eliminar registro
     private void Eliminar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/ListarClientes.jsp");

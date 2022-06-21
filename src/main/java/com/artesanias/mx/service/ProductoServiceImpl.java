@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Implementacion de metodos Productos
  */
 package com.artesanias.mx.service;
 
@@ -10,10 +11,7 @@ import com.artesanias.mx.model.IProductoModel;
 import com.artesanias.mx.model.ProductoModelImpl;
 import java.util.List;
 
-/**
- *
- * @author labtw04
- */
+
 public class ProductoServiceImpl implements IProductoService{
     
     IProductoModel model = new ProductoModelImpl();

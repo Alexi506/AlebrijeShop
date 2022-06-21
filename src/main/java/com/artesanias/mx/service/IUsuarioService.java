@@ -1,8 +1,8 @@
 /*
-Autor: Alexi Daniel Ramirez Ruiz
-Fecha de creación:17 de Marzo 2022
-Fecha de Actualización: 17 de Marzo de 2022
-Descripción: Servlet formulario editar registros
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Interface usuarios
  */
 package com.artesanias.mx.service;
 

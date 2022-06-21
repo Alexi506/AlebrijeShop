@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Implementacion de métodos productos
  */
 package com.artesanias.mx.model;
 
@@ -13,14 +14,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-/**
- *
- * @author labtw04
- */
+
 public class ProductoModelImpl implements IProductoModel{
     private SessionFactory sf;
     private Session s;
-
+    //implemetación metodo crear
     @Override
     public void crearRegistro(Producto producto) {
         try {
@@ -31,12 +29,11 @@ public class ProductoModelImpl implements IProductoModel{
             s.getTransaction().commit();
             s.close();
             sf.close();
-            System.out.println("Registrado correctamente");
         } catch (HibernateException e) {
             System.out.println("Error al crear el registro: " + e.getMessage());
         }
     }
-
+    //implementación método actualizar
     @Override
     public void actualizarRegistro(Producto producto) {
         try {
@@ -47,12 +44,11 @@ public class ProductoModelImpl implements IProductoModel{
             s.getTransaction().commit();
             s.close();
             sf.close();
-            System.out.println("Actualizado correctamente");
         } catch (Exception e) {
             System.out.println("Error" + e.getMessage());
         }
     }
-
+    //implementación método obtenerregistros-lista a los productos
     @Override
     public List<Producto> obtenerRegistros() {
          try {
@@ -67,7 +63,7 @@ public class ProductoModelImpl implements IProductoModel{
         }
         return null;
     }
-
+    //implemetación método obteneRegistro
     @Override
     public Producto obtenerRegistro(int codigo) {
         try{
@@ -83,7 +79,7 @@ public class ProductoModelImpl implements IProductoModel{
         }
         return null;
     }
-
+    //método para eliminar un egistro
     @Override
     public void eliminarRegistro(Producto producto) {
          try {
@@ -94,23 +90,8 @@ public class ProductoModelImpl implements IProductoModel{
             s.getTransaction().commit();
             s.close();
             sf.close();
-             System.out.println("Eliminado correctamente");
         } catch (Exception e) {
             System.out.println("Error");
         }
     }
-    
-    public static void main(String[] args) {
-        IProductoModel model = new ProductoModelImpl();
-        Producto p = new Producto();
-       // p.setCodigo(9);
-        p.setNombre("Tapete");
-        p.setDescripcion("Producto de lana");
-        p.setPrecio(80.5);
-        p.setUrlImagen("resources/img/tapete.jpg");
-        model.crearRegistro(p);
-        //model.actualizarRegistro(p);
-        //model.eliminarRegistro(p);
-    }
-
 }

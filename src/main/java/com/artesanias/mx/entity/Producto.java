@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Métodos get y set de las tabla producto
  */
 package com.artesanias.mx.entity;
 
@@ -18,13 +19,9 @@ import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author labtw04
- */
 @Entity
 @Table(name = "producto")
-
+/* Driver para la base de datos */
 public class Producto implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -39,19 +36,21 @@ public class Producto implements Serializable {
     @Size(max = 60)
     @Column(name = "descripcion")
     private String descripcion;
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "precio")
     private Double precio;
-     @Column(name = "urlimagen", length = 30, nullable = true)
-    private String urlImagen; 
+    @Column(name = "urlimagen", length = 30, nullable = true)
+    private String urlImagen;
 
+    //constructor vacio
     public Producto() {
     }
 
+    //Constructor con parametro codigo
     public Producto(Integer codigo) {
         this.codigo = codigo;
     }
 
+    /*--------- inicio método get y set ---------------*/
     public Integer getCodigo() {
         return codigo;
     }
@@ -83,7 +82,7 @@ public class Producto implements Serializable {
     public void setPrecio(Double precio) {
         this.precio = precio;
     }
-    
+
     public String getUrlImagen() {
         return urlImagen;
     }
@@ -92,6 +91,7 @@ public class Producto implements Serializable {
         this.urlImagen = urlImagen;
     }
 
+    /*--------- fin método get y set ---------------*/
     @Override
     public int hashCode() {
         int hash = 0;
@@ -116,5 +116,5 @@ public class Producto implements Serializable {
     public String toString() {
         return "com.artesanias.mx.entity.Producto[ codigo=" + codigo + " ]";
     }
-    
+
 }

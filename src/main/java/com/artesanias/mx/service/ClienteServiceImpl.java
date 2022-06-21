@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Implementacion de metodos service cliente
  */
 package com.artesanias.mx.service;
 
@@ -13,7 +14,7 @@ import java.util.List;
 
 public class ClienteServiceImpl implements IClienteService{
     IClienteModel model = new ClienteModelImpl();
-
+    
     @Override
     public void crearRegistro(Clientes clientes) {
         model.crearRegistro(clientes);

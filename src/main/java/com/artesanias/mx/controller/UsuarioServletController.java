@@ -1,8 +1,8 @@
 /*
-Autor: Alexi Daniel Ramirez Ruiz 
-Fecha de creación: 17 de Marzo 2022
-Fecha de Actualización: 17 de Marzo de 2022
-Descripción: Servlet formulario editar registros
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Servlet Usuario
  */
 package com.artesanias.mx.controller;
 
@@ -62,14 +62,14 @@ public class UsuarioServletController extends HttpServlet {
             throws ServletException, IOException {
         doGet(request, response);
     }
-
+    //Método llamada de formulario creacion clientes
     private void crearFormulario(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher
                 = request.getRequestDispatcher("/pages/createForm.jsp");
         dispatcher.forward(request, response);
     }
-
+    //Método creación de clientes
     private void crear(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Usuario usuario = new Usuario();
@@ -89,7 +89,7 @@ public class UsuarioServletController extends HttpServlet {
         request.setAttribute("ListaUsuario", ListaUsuario);
         dispatcher.forward(request, response);
     }
-
+    //Método listar productos
     private void Listar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/list.jsp");
@@ -98,7 +98,7 @@ public class UsuarioServletController extends HttpServlet {
         request.setAttribute("ListaUsuario", ListaUsuario);
         dispatcher.forward(request, response);
     }
-
+    //Método para eliminar usuario
     private void Eliminar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/list.jsp");
@@ -111,7 +111,7 @@ public class UsuarioServletController extends HttpServlet {
         request.setAttribute("ListaUsuario", ListaUsuario);
         dispatcher.forward(request, response);
     }
-
+    //Método llamada al formulario Actualización
     private void ActualizarForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Usuario usuario = this.service.obtenerRegistro(Integer.parseInt(request.getParameter("codigo")));
@@ -119,7 +119,7 @@ public class UsuarioServletController extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/actualizar.jsp");
         dispatcher.forward(request, response);
     }
-
+    //Método Actualizar usuario
     private void Actualizar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println(request.getParameter("codigo"));
