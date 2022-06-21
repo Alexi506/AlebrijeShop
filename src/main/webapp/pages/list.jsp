@@ -1,8 +1,8 @@
 <%-- 
-Autor: Alexi Daniel Ramirez Ruiz
-Fecha de creación:17 de Marzo 2022
-Fecha de Actualización: 17 de Marzo de 2022
-Descripción: Servlet formulario editar registros
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: JSP Listar Usuarios
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -32,7 +32,7 @@ Descripción: Servlet formulario editar registros
                 <a href="UsuarioServletController?action=crearForm">Crear</a>
                 <a href="UsuarioServletController?action=listar">Actualizar </a>
                 <a href="UsuarioServletController?action=listar">Eliminar </a>
-                <a href="#contact">Acerca de </a>
+                <a href="pages/presentacion.html">Acerca de </a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -52,21 +52,14 @@ Descripción: Servlet formulario editar registros
                         <p>Sexo: <c:out value="${usuario.sexo}"/> </p>
                         <p>Nombre Usuario: <c:out value="${usuario.nombreusuario}"/> </p>
                     </figcaption>
-                        <%--  <img src="<c:url value="${usuario.urlImagen}"/>"/> --%>
-                        <img src="resources/img/alebrije7.jpg"/>
+                    <%--  <img src="<c:url value="${usuario.urlImagen}"/>"/> --%>
+                    <img src="resources/img/alebrije7.jpg"/>
                     <div class="position"><a href="UsuarioServletController?action=actualizaForm&codigo=<c:out value="${usuario.codigo}"/>" onclick="return confirm('Estás seguro que deseas actualizar el registro?')">Editar</a> <a href="UsuarioServletController?action=delete&codigo=<c:out value="${usuario.codigo}"/>" onclick="return confirm('Estás seguro que deseas eliminar el registro?')"  >Eliminar</a></div>
                 </figure>
             </c:forEach>
         </div>
         <!-- Fin form lista --> 
 
-
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <!-- Pie de pagina -->
         <footer class="bg-dark text-white text-center text-lg-start">
             <!-- Grid container -->
@@ -115,7 +108,7 @@ Descripción: Servlet formulario editar registros
             <!-- Copyright -->
         </footer>
         <!-- Fin de Pie de pagina -->
-
+        <!-- Script navegador -->
         <script>
             function myFunction() {
                 var x = document.getElementById("myTopnav");

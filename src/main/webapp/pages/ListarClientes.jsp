@@ -1,7 +1,8 @@
 <%-- 
-    Document   : ListarClientes
-    Created on : 14 jun 2022, 14:23:10
-    Author     : labtw04
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: JSP Formulario para Listar Clientes
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Clientes</title>
+        <script type="text/javascript" src="../resources/script.js"></script>
         <style type = "text/css">
             <%@ include file = "../resources/css/ListarCliente.css"%>
             <%@ include file = "../webjars/bootstrap/5.1.3/css/bootstrap.min.css"%>
@@ -24,48 +26,35 @@
                 <a href="ClienteServletController?action=crearForm">Crear</a>
                 <a href="ClienteServletController?action=listar">Actualizar </a>
                 <a href="ClienteServletController?action=listar">Eliminar </a>
-                <a href="#contact">Acerca de </a>
+                <a href="pages/presentacion.html">Acerca de </a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
             </div>
         </div> <br>
         <!-- Fin Menu index -->
-        <!-- Inicio form lista -->
-        <div id="main-wrapper">
-            <div class="frozen-table" data-table="both">
-                <table border="1" width="100%"  class="table">
-                    <tr>
-                        <td>Nombre</td>   
-                        <td>Edad</td>  
-                        <td>Sexo</td>  
-                        <td>Dirección</td>  
-                        <td>Telefono</td>  
-                        <td colspan=3>Acciones</td>  
-                    </tr> 
-                    <c:forEach var="clientes" items="${ListaClientes}">
-                        <tr>
-                        <td><c:out value="${clientes.nombre}"/></td>
-                        <td><c:out value="${clientes.edad}"/></td>
-                        <td><c:out value="${clientes.sexo}"/></td>
-                        <td><c:out value="${clientes.direccion}"/></td>
-                        <td><c:out value="${clientes.telefono}"/></td>
-                        <td><a href=""></a></td>
-                        <td><a href="ClienteServletController?action=actualizaForm&codigo=<c:out value="${clientes.codigo}"/>" onclick="return confirm('Estás seguro que deseas actualizar el registro?')">Actualizar</a></td>
-                        <td><a href="ClienteServletController?action=delete&codigo=<c:out value="${clientes.codigo}"/>" onclick="return confirm('Estás seguro que deseas eliminar el registro?')"  >Eliminar</a></td>
-                        </tr> 
-                    </c:forEach>
-                </table> 
-            </div>
-        </div><br>
-        <br>
-        <br>
-        <!-- Fin form lista --> 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        
+        <!-- Inicio for lista -->
+        <div class="container">
+            <c:forEach var="clientes" items="${ListaClientes}">
+                <div class="card">
+                    <div class="imgBx">
+                        <img src='https://cdn.pixabay.com/photo/2015/12/09/01/02/mandalas-1084082_960_720.jpg'>
+                    </div>
+                    <div class="content">
+                        <h2><c:out value="${clientes.nombre}"/></h2>
+                        <p>Edad: <c:out value="${clientes.edad}"/></p>
+                        <p>Sexo: <c:out value="${clientes.sexo}"/></p>
+                        <p>Dirección: <c:out value="${clientes.direccion}"/></p>
+                        <p>Telefono: <c:out value="${clientes.telefono}"/></p>
+                        <a href="ClienteServletController?action=actualizaForm&codigo=<c:out value="${clientes.codigo}"/>" onclick="return confirm('Estás seguro que deseas actualizar el registro?')">Actualizar</a>
+                        <a href="ClienteServletController?action=delete&codigo=<c:out value="${clientes.codigo}"/>" onclick="return confirm('Estás seguro que deseas eliminar el registro?')"  >Eliminar</a>
+                    </div>
+                </div>
+            </c:forEach>   
+        </div>
+        <!-- Fin for lista --> 
+        
         <!-- Pie de pagina -->
         <footer class="bg-dark text-white text-center text-lg-start">
             <!-- Grid container -->
@@ -82,11 +71,9 @@
                         <h5 class="text-uppercase">Redes sociales</h5>
 
                         <ul class="list-unstyled mb-0">
-
                             <a href="#"> <img src="resources/img/instagram.png"><i class="text-white">AlexRam</i></a><br><br>
                             <a href="#"> <img src="resources/img/facebook.png"><i class="text-white">Alexi Ramirez</i></a><br><br>
                             <a href="#"> <img src="resources/img/whatsapp.png"><i class="text-white">2548759658</i></a><br>
-
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
@@ -113,7 +100,7 @@
             <!-- Copyright -->
         </footer>
         <!-- Fin de Pie de pagina -->
-
+        <!-- Inicio script navegador -->
         <script>
             function myFunction() {
                 var x = document.getElementById("myTopnav");

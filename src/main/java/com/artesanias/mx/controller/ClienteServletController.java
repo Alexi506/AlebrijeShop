@@ -1,10 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Servlet Clientes
  */
-package com.artesanias.mx.controller;
 
+package com.artesanias.mx.controller;
 import com.artesanias.mx.entity.Clientes;
 import com.artesanias.mx.service.ClienteServiceImpl;
 import com.artesanias.mx.service.IClienteService;
@@ -18,14 +19,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author labtw04
- */
+
 @WebServlet(name = "ClienteServletController", urlPatterns = {"/ClienteServletController"})
 public class ClienteServletController extends HttpServlet {
     IClienteService service;
-
+    //Acciones para el CRUD
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -63,7 +61,7 @@ public class ClienteServletController extends HttpServlet {
             throws ServletException, IOException {
         doGet(request, response);
     }
-    
+    //Método para listar registros del cliente
     private void Listar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/ListarClientes.jsp");
@@ -73,12 +71,13 @@ public class ClienteServletController extends HttpServlet {
         dispatcher.forward(request, response);
     }
     
+    //Método para llamada al formulario, creacion de registros
     private void crearFormulario(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/CrearCliente.jsp");
         dispatcher.forward(request, response);
     }
-
+    //Método creación de Clientes
     private void crear(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Clientes clientes = new Clientes();
@@ -97,7 +96,7 @@ public class ClienteServletController extends HttpServlet {
         request.setAttribute("ListaClientes", ListaClientes);
         dispatcher.forward(request, response);
     }
-    
+    //Método llamada al formulario actualzación cliente
     private void ActualizarForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Clientes clientes = this.service.obtenerRegistro(Integer.parseInt(request.getParameter("codigo")));
@@ -105,7 +104,7 @@ public class ClienteServletController extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/ActualizarCliente.jsp");
         dispatcher.forward(request, response);
     }
-
+    //Método Actualizar Cliente
     private void Actualizar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         System.out.println(request.getParameter("codigo"));
@@ -122,7 +121,7 @@ public class ClienteServletController extends HttpServlet {
         dispatcher.forward(request, response);
     }
     
-    
+    //Método
     private void Eliminar(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/pages/ListarClientes.jsp");

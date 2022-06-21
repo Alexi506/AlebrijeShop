@@ -1,13 +1,12 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Validación de eliminacion y modificación de registros 
  */
 function confirmar ( mensaje ) {
 return confirm( mensaje );
 } 
-
-
 function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {

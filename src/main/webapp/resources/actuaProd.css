@@ -1,11 +1,8 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 16 jun 2022, 11:32:44
-    Author     : labtw04
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Estilos a la pagina de actualizacion de Productos
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
@@ -146,7 +143,6 @@ input[type="submit"]:hover {
 
     
 /*Estilos nav bar */
-
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -197,6 +193,3 @@ input[type="submit"]:hover {
     text-align: left;
   }
 }
-
-
-/*------------ Estilos card productos ----------------------*/

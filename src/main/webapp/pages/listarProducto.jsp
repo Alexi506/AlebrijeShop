@@ -1,7 +1,8 @@
 <%-- 
-    Document   : listarProducto
-    Created on : 17 may 2022, 15:24:09
-    Author     : labtw04
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: JSP Listar Productos
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -27,7 +28,7 @@
                 <a href="ProductoServletController?action=listar">Actualizar</a>
                 <a href="ProductoServletController?action=listar">Listar </a>
                 <a href="ProductoServletController?action=listar">Eliminar </a>
-                <a href="#contact">Acerca de </a>
+                <a href="pages/presentacion.html">Acerca de </a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -44,7 +45,7 @@
                         <div class="col-md-3">
                             <div class="wsk-cp-product">
                                 <div class="wsk-cp-img">
-                                   <img src="<c:url value="${producto.urlImagen}"/>"/>
+                                    <img src="<c:url value="${producto.urlImagen}"/>"/>
                                 </div>
                                 <div class="wsk-cp-text">
                                     <div class="category">
@@ -121,7 +122,7 @@
             <!-- Copyright -->
         </footer>
         <!-- Fin de Pie de pagina -->
-
+        <!-- Script navegador -->
         <script>
             function myFunction() {
                 var x = document.getElementById("myTopnav");

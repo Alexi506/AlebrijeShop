@@ -1,7 +1,8 @@
 <%-- 
-    Document   : CrearProducto
-    Created on : 13 jun 2022, 14:11:35
-    Author     : labtw04
+Autor: Alexi Daniel Ramirez Ruiz
+Fecha de creación:17 de Marzo 2022
+Fecha de Actualización: 10 de Junio de 2022
+Descripción: JSP Formulario para Crear Registro de Cliente
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -25,10 +26,10 @@
         <div class="contenido">
             <div class="topnav" id="myTopnav">
                 <a href="pages/index.html" class="active">Home</a>
-                <a href="ProductoServletController?action=crearForm">Crear</a>
-                <a href="ProductoServletController?action=listar">Listar </a>
-                <a href="ProductoServletController?action=listar">Eliminar </a>
-                <a href="#contact">Acerca de </a>
+                <a href="ClienteServletController?action=crearForm">Crear</a>
+                <a href="ClienteServletController?action=listar">Listar </a>
+                <a href="ClienteServletController?action=listar">Eliminar </a>
+                <a href="pages/presentacion.html">Acerca de </a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>

@@ -1,24 +1,11 @@
 /*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 5 abr 2022, 10:24:22
-    Author     : labtw04
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Estilos a los textos de la pagina principal
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Luckiest+Guy&family=Montserrat:wght@700&family=Nosifer&family=Oswald:wght@400;600&family=Roboto:wght@100;300&family=Rubik+Glitch&display=swap');
-/*
-.lefttext{
-    width: 40%;
-    height: 70%;
-    justify-content: center;
-    display:flex;  
-    margin: 2% 0px 0px 5%;
-    text-align: center;
-    overflow: hidden;
-}*/
 .lefttext .textwrap{
     margin: 25% 10px 0px 0px;
     width: 100%;

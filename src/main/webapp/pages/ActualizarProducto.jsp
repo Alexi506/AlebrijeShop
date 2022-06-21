@@ -1,7 +1,8 @@
 <%-- 
-    Document   : ActualizarProducto
-    Created on : 14 jun 2022, 10:28:38
-    Author     : labtw04
+Autor: Alexi Daniel Ramirez Ruiz
+Fecha de creación:17 de Marzo 2022
+Fecha de Actualización: 10 de Junio de 2022
+Descripción: JSP Formulario para Actualizar Registro del Producto
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -29,7 +30,7 @@
                 <a href="ProductoServletController?action=crearForm">Crear</a>
                 <a href="ProductoServletController?action=listar">Listar </a>
                 <a href="ProductoServletController?action=listar">Eliminar </a>
-                <a href="#contact">Acerca de </a>
+                <a href="pages/presentacion.html">Acerca de </a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -37,7 +38,7 @@
         </div> <br>
         <!-- Fin Menu Producto -->
 
-        <!-- INicio formulario -->
+        <!-- Inicio formulario -->
         <div class="modernForm">
             <div class="imageSection">
                 <div class="image">
@@ -77,6 +78,7 @@
                 </form>
             </div>
         </div>
+        <!-- Fin formulario -->
 
         <!-- Pie de pagina -->
         <footer class="bg-dark text-white text-center text-lg-start">
@@ -85,20 +87,16 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
                         <h5 class="text-uppercase">AlebrijesShop</h5>
-
                         <p>
                             "Hecho a mano hechos con el corazón"
                         </p>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
                         <h5 class="text-uppercase">Redes sociales</h5>
-
                         <ul class="list-unstyled mb-0">
-
                             <a href="#"> <img src="resources/img/instagram.png"><i class="text-white">AlexRam</i></a><br><br>
                             <a href="#"> <img src="resources/img/facebook.png"><i class="text-white">Alexi Ramirez</i></a><br><br>
                             <a href="#"> <img src="resources/img/whatsapp.png"><i class="text-white">2548759658</i></a><br>
-
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
@@ -117,7 +115,6 @@
                 </div>
                 <!--Grid row-->
             </div>
-
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(255, 63, 162, 1);">
                 © 2022 Copyright:
@@ -127,6 +124,7 @@
         </footer>
         <!-- Fin de Pie de pagina -->
 
+         <!-- Script menu  -->
         <script>
             function myFunction() {
                 var x = document.getElementById("myTopnav");

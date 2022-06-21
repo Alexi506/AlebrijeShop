@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!--
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: Quienes somos
+-->
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,50 +14,47 @@
         <link rel="stylesheet" type="text/css" href="../resources/presentacion.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="script.js"></script>
-        
+
 
     </head>
-
     <body>
         <!-- Menu index -->
-        <nav nav class="navbar navbar-dark bg-dark" style="background-color: #000;">
-            <div class="container-fluid">
-                <a href="pages/index.html" class="navbar-brand"><i class="fa fa-home"></i>Home</a>
+        <div class="guntsu">
+            <div class="contenido">
+                <div class="topnav" id="myTopnav">
+                    <a href="pages/index.html" class="active">Home</a>
+                    <a href="UsuarioServletController?action=listar">Listar</a>
+                    <a href="UsuarioServletController?action=listar">Actualizar </a>
+                    <a href="UsuarioServletController?action=listar">Eliminar </a>
+                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
             </div>
-        </nav> <br>
+        </div>
         <!-- Fin Menu index -->
-      
-        
-        
-        
+        <!-- Inicio target Quiene somos -->
         <aside class="profile-card">
             <header>
                 <!-- here’s the avatar -->
                 <a target="_blank" href="#">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFyvvHxus8QrvQ9eCPOe4seUb6UwwqIbnyBOeFvZZCG4TtKmnQ2bPyoZOBDwDwLGQv_Yw&usqp=CAU" class="hoverZoomLink">
                 </a>
-
                 <!-- the username -->
                 <h1>
                     Alexi Daniel Ramirez Ruiz
                 </h1>
-
                 <!-- and role or location -->
                 <h2>
                     Programador
                 </h2>
-
             </header>
-
             <!-- bit of a bio; who are you? -->
             <div class="profile-bio">
-
                 <p>
                     La tecnologia crece dia a dia y me encanta pensar ser parte de ella.. Ingenieria,Desarrollo web. <br>
                 </p>
-
             </div>
-
             <!-- some social links to show off -->
             <ul class="profile-social-links">
                 <li>
@@ -77,7 +80,5 @@
                 </li>
             </ul>
         </aside>
-
     </body>
-
 </html>

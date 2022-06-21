@@ -1,8 +1,8 @@
 <%-- 
-Autor: Alexi Daniel Ramirez Ruiz
-Fecha de creación:17 de Marzo 2022
-Fecha de Actualización: 17 de Marzo de 2022
-Descripción: Servlet formulario editar registros
+    Autor: Alexi Daniel Ramirez Ruiz
+    Fecha de creación:17 de Marzo 2022
+    Fecha de Actualización: 10 de Junio de 2022
+    Descripción: JSP Formulario para crear Usuarios
 --%>
 
 
@@ -29,7 +29,7 @@ Descripción: Servlet formulario editar registros
                 <a href="UsuarioServletController?action=listar">Listar</a>
                 <a href="UsuarioServletController?action=listar">Actualizar </a>
                 <a href="UsuarioServletController?action=listar">Eliminar </a>
-                <a href="#contact">Acerca de </a>
+                <a href="pages/presentacion.html">Acerca de </a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa fa-bars"></i>
                 </a>
@@ -37,7 +37,7 @@ Descripción: Servlet formulario editar registros
         </div>
         <!-- Fin Menu index -->
 
-        <!-- Crear formulario -->
+        <!-- Inicio Formulario para Registrar Usuarios -->
         <div class="modernForm">
             <div class="imageSection">
                 <div class="image">
@@ -50,7 +50,6 @@ Descripción: Servlet formulario editar registros
                     <p class="tagLine">(pablo picasso)</p><br><br>
                 </div>
             </div>
-            
             <div class="contactForm">
                 <h1 style="text-align: center">Registro Usuario</h1>
                 <form action="UsuarioServletController?action=crearBD" method="POST">
@@ -83,7 +82,7 @@ Descripción: Servlet formulario editar registros
                 </form>
             </div>
         </div>
-
+        <!-- Fin Formulario para Registrar Usuarios -->
         <!-- Pie de pagina -->
         <footer class="bg-dark text-white text-center text-lg-start">
             <!-- Grid container -->
@@ -133,17 +132,18 @@ Descripción: Servlet formulario editar registros
             <!-- Copyright -->
         </footer>
         <!-- Fin de Pie de pagina -->
+
+        <!-- Script Navegador --> 
         
-        <!-- Fin form lista --> 
         <script>
-        function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-        x.className += " responsive";
-        } else {
-        x.className = "topnav";
-        }
-        }
+            function myFunction() {
+                var x = document.getElementById("myTopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
         </script>
 
 

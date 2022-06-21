@@ -1,12 +1,9 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ Autor: Alexi Daniel Ramirez Ruiz
+ Fecha de creación:17 de Marzo 2022
+ Fecha de Actualización: 10 de Junio de 2022
+ Descripción: Animaciona a la pagina principal y quienes somos
  */
-
-
-
-
 
 window.onload = init;
 console.ward = function () {}; // what warnings?
