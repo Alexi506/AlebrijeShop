@@ -53,7 +53,7 @@
                         <p>Nombre Usuario: <c:out value="${usuario.nombreusuario}"/> </p>
                     </figcaption>
                     <%--  <img src="<c:url value="${usuario.urlImagen}"/>"/> --%>
-                    <img src="resources/img/alebrije7.jpg"/>
+                    <img src="https://img2.freepng.es/20200413/cx/transparent-icon-design-5e9514e3e94e76.6287660515868285159556.jpg"/>
                     <div class="position"><a href="UsuarioServletController?action=actualizaForm&codigo=<c:out value="${usuario.codigo}"/>" onclick="return confirm('Estás seguro que deseas actualizar el registro?')">Editar</a> <a href="UsuarioServletController?action=delete&codigo=<c:out value="${usuario.codigo}"/>" onclick="return confirm('Estás seguro que deseas eliminar el registro?')"  >Eliminar</a></div>
                 </figure>
             </c:forEach>

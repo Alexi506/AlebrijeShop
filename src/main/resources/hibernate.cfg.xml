@@ -1,9 +1,3 @@
-<!--Autor: Alexi Daniel Ramirez Ruiz
-Fecha de creación:17 de Marzo 2022
-Fecha de Actualización: 10 de Junio de 2022
-Descripción: Implementacion de metodos Usuario
--->
-
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!DOCTYPE hibernate-configuration PUBLIC
@@ -15,9 +9,9 @@ Descripción: Implementacion de metodos Usuario
  
         <!-- Connection settings -->
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://172.17.0.2:5432/bdalebrijes</property>
-        <property name="hibernate.connection.username">postgres</property>
-        <property name="hibernate.connection.password">alexi</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://10.100.20.110:5432/bdalebrijes</property>
+        <property name="hibernate.connection.username">webadmin</property>
+        <property name="hibernate.connection.password">SGVkhn19335</property>
  
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>

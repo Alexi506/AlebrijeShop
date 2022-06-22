@@ -39,7 +39,7 @@
             <c:forEach var="clientes" items="${ListaClientes}">
                 <div class="card">
                     <div class="imgBx">
-                        <img src='https://cdn.pixabay.com/photo/2015/12/09/01/02/mandalas-1084082_960_720.jpg'>
+                        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOIeiLiTM8OCYqNr1du51aL_xJcZMEgJ-M-TVXL0TkYcPgGnymfm9lYHrG_8ZYwJkZuYk&usqp=CAU'>
                     </div>
                     <div class="content">
                         <h2><c:out value="${clientes.nombre}"/></h2>
